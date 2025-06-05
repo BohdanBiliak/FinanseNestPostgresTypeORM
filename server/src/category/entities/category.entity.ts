@@ -24,7 +24,8 @@ export class Category
     updatedAt: Date;
 
     @ManyToOne(() => User, (user) => user.categories, {
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
+        eager: true,
     })
     @JoinColumn({name: 'user_id'})
     user: User
